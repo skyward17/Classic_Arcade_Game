@@ -3,8 +3,7 @@ let Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
+    // The image/sprite for enemies
     this.sprite = 'images/enemy-bug.png';
 };
 
@@ -36,7 +35,6 @@ let Player = function() {
     this.charPinkGirl = 'images/char-pink-girl.png';
     this.charPrincessGirl = 'images/char-princess-girl.png';
     this.charSEAL = 'images/char-seal-boy.png';
-
 
 };
 
