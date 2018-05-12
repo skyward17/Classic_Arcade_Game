@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-var Enemy = function() {
+let Enemy = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -21,10 +21,17 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
+let Player = function() {
+    // Variables applied to each of our instances go here,
+    // we've provided one for you to get started
 
+
+    this.charboy = 'images/char-boy.png';
+};
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
