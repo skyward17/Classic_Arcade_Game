@@ -31,6 +31,13 @@ let Player = function() {
 
 
     this.charboy = 'images/char-boy.png';
+    this.charCatGirl = 'images/char-cat-girl.png';
+    this.charHornGirl = 'images/char-horn-girl.png';
+    this.charPinkGirl = 'images/char-pink-girl.png';
+    this.charPrincessGirl = 'images/char-princess-girl.png';
+    this.charSEAL = 'images/char-seal-boy.png';
+
+
 };
 
 // Now instantiate your objects.
