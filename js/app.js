@@ -28,9 +28,10 @@ Enemy.prototype.render = function(locX, locY) {
     ctx.drawImage(Resources.get(this.sprite), this.locX, this.locY);
 };
 
+// Enemy objects in an array called allEnemies
 let allEnemies = [Enemy.sprite];
 
-let update = new.Enemy() {};
+//let update = new.Enemy() {};
 
 // Now write your own player class
 // This class requires an update(), render() and
@@ -70,8 +71,7 @@ Player.prototype.render = function(locX, locY) {
 };
 // Now instantiate your objects.
 
-// Enemy objects in an array called allEnemies
-let allEnemies = [];
+
 
 // Player object in a variable called player
 let player = [];
