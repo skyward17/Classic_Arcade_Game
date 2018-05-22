@@ -1,5 +1,5 @@
 // Enemies our player must avoid
-let Enemy = function() {
+let Enemy = function(locX, locY, enemySpeed) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
 
@@ -12,6 +12,7 @@ let Enemy = function() {
 
     //Speed of Enemies based on user difficulty selection
     this.enemySpeed = enemySpeed;
+
 };
 
 // Update the enemy's position, required method for game
@@ -23,7 +24,7 @@ Enemy.prototype.update = function(dt) {
 };
 
 // Draw the enemy on the screen, required method for game
-Enemy.prototype.render = function(x, y) {
+Enemy.prototype.render = function(locX, locY) {
     ctx.drawImage(Resources.get(this.sprite), this.locX, this.locY);
 };
 
@@ -39,22 +40,31 @@ let update = new.Enemy() {};
 let Player = function() {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
+    // The image/sprite for player
+    this.charboy = 'images/char-boy.png';
+
+    // Start location for player
+    this.locX = 200;
+    this.locY = 400;
 
 
+/*
     this.charboy = 'images/char-boy.png';
     this.charCatGirl = 'images/char-cat-girl.png';
     this.charHornGirl = 'images/char-horn-girl.png';
     this.charPinkGirl = 'images/char-pink-girl.png';
     this.charPrincessGirl = 'images/char-princess-girl.png';
     this.charSEAL = 'images/char-seal-boy.png';
-
+*/
 };
 
 // Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
 
+// Enemy objects in an array called allEnemies
+let allEnemies = [];
 
+// Player object in a variable called player
+let player = [];
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
