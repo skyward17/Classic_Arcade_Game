@@ -11,16 +11,18 @@ let Enemy = function(locX, locY, enemySpeed) {
     this.locY = locY;
 
     //Speed of Enemies based on user difficulty selection
-    this.enemySpeed = enemySpeed;
+    this.enemySpeed = 100;  //enemySpeed for Speed of Enemies based on user difficulty selection added later
 
 };
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(dt) {
+Enemy.prototype.update = function(locX, dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+  this.locX = locX + this.enemySpeed * dt;
+
 };
 
 // Draw the enemy on the screen, required method for game
@@ -29,7 +31,8 @@ Enemy.prototype.render = function(locX, locY) {
 };
 
 // Enemy objects in an array called allEnemies
-let allEnemies = [Enemy.sprite];
+let enemyOne = new Enemy(100,100);  // Not sure placement
+let allEnemies = [enemyOne];
 
 //let update = new.Enemy() {};
 
@@ -38,7 +41,7 @@ let allEnemies = [Enemy.sprite];
 // a handleInput() method.
 
 
-let Player = function() {
+let Player = function(locX, locY) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
     // The image/sprite for player
@@ -69,12 +72,13 @@ Player.prototype.update = function(dt) {
 Player.prototype.render = function(locX, locY) {
     ctx.drawImage(Resources.get(this.charboy), this.locX, this.locY);
 };
+
 // Now instantiate your objects.
 
-
+let playerOne = new Player(200,400);
 
 // Player object in a variable called player
-let player = [];
+let player = playerOne;
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
