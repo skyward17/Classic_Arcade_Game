@@ -73,22 +73,22 @@ Player.prototype.handleInput = function(key) {
 
 // Handles LEFT KEY  noteToSelf: movement by square, handle off screen
   if (key === 'left') {
-      this.locX = this.locX -20;
+      this.locX = this.locX -100;
       console.log(this.locX);  // For testing readout
       return this.locX;
   }
   if (key === 'right') {
-    this.locX = this.locX +40;
+    this.locX = this.locX +100;
     console.log(this.locX); // For testing readout
     return this.locX;
   }
   if (key === 'up') {
-    this.locX = this.locX +40;
+    this.locX = this.locX +100;
     console.log(this.locX); // For testing readout
     return this.locX;
   }
   if (key === 'down') {
-    this.locX = this.locX +40;
+    this.locX = this.locX +100;
     console.log(this.locX); // For testing readout
     return this.locX;
   }
