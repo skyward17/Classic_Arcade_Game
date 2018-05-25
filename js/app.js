@@ -71,10 +71,11 @@ Player.prototype.update = function(dt) {
 
 Player.prototype.handleInput = function(key) {
 
-  if (this.key === 37) {
+  if (key === 'left') {
       this.locX = this.locX -20;
-      return this.locX;
       console.log(this.locX);
+      return this.locX;
+
   }
 };
 
