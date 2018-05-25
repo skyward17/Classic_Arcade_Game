@@ -66,6 +66,16 @@ Player.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
+
+};
+
+Player.prototype.handleInput = function(key) {
+
+  if (this.key === 37) {
+      this.locX = this.locX -20;
+      return this.locX;
+      console.log(this.locX);
+  }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -90,9 +100,5 @@ document.addEventListener('keyup', function(e) {
         40: 'down'
     };
 
-    if (e.keyCode === 37) {
-        this.locX = this.locX -20;
-        return this.locX;
-    }
     player.handleInput(allowedKeys[e.keyCode]);
 });
