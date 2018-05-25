@@ -71,12 +71,28 @@ Player.prototype.update = function(dt) {
 
 Player.prototype.handleInput = function(key) {
 
+// Handles LEFT KEY  noteToSelf: movement by square, handle off screen
   if (key === 'left') {
       this.locX = this.locX -20;
-      console.log(this.locX);
+      console.log(this.locX);  // For testing readout
       return this.locX;
-
   }
+  if (key === 'right') {
+    this.locX = this.locX +40;
+    console.log(this.locX); // For testing readout
+    return this.locX;
+  }
+  if (key === 'up') {
+    this.locX = this.locX +40;
+    console.log(this.locX); // For testing readout
+    return this.locX;
+  }
+  if (key === 'down') {
+    this.locX = this.locX +40;
+    console.log(this.locX); // For testing readout
+    return this.locX;
+  }
+
 };
 
 // Draw the enemy on the screen, required method for game
