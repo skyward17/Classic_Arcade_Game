@@ -90,5 +90,9 @@ document.addEventListener('keyup', function(e) {
         40: 'down'
     };
 
+    if (e.keyCode === 37) {
+        this.locX = this.locX -20;
+        return this.locX;
+    }
     player.handleInput(allowedKeys[e.keyCode]);
 });
