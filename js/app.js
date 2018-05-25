@@ -73,14 +73,24 @@ Player.prototype.handleInput = function(key) {
 
 // Handles LEFT KEY  noteToSelf: movement by square, handle off screen
   if (key === 'left') {
+    // Left Screen Block.  If 0 x then remain there, cannot go further left.
+      if (this.locX === 0) {
+        this.locX = 0;
+        return this.locX;
+      }
       this.locX = this.locX -100;
       console.log(this.locX);  // For testing readout
       return this.locX;
   }
   if (key === 'right') {
-    this.locX = this.locX +100;
-    console.log(this.locX); // For testing readout
-    return this.locX;
+    // Left Screen Block.  If 0 x then remain there, cannot go further left.
+      if (this.locX === 400) {
+        this.locX = 400;
+        return this.locX;
+      }
+      this.locX = this.locX +100;
+      console.log(this.locX);  // For testing readout
+      return this.locX;
   }
   if (key === 'up') {
     this.locX = this.locX +100;
