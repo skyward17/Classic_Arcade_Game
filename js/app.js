@@ -48,8 +48,8 @@ let Player = function(locX, locY) {
     this.charboy = 'images/char-boy.png';
 
     // Start location for player
-    this.locX = 200;
-    this.locY = 400;
+    this.locX = locX;
+    this.locY = locY;
 
 
 /*
@@ -78,7 +78,7 @@ Player.prototype.handleInput = function(key) {
         this.locX = 0;
         return this.locX;
       }
-      this.locX = this.locX -100;
+      this.locX = this.locX -100;  // Set to 100's to move block by block
       console.log(this.locX);  // For testing readout
       return this.locX;
   }
@@ -93,14 +93,14 @@ Player.prototype.handleInput = function(key) {
       return this.locX;
   }
   if (key === 'up') {
-    this.locX = this.locX +100;
-    console.log(this.locX); // For testing readout
-    return this.locX;
+    this.locY = this.locY -100;
+    console.log(this.locY ); // For testing readout
+    return this.locY;
   }
   if (key === 'down') {
-    this.locX = this.locX +100;
-    console.log(this.locX); // For testing readout
-    return this.locX;
+    this.locY = this.locY +100;
+    console.log(this.locY); // For testing readout
+    return this.locY;
   }
 
 };
