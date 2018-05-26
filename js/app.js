@@ -95,6 +95,10 @@ Player.prototype.handleInput = function(key) {
     }
 
     if (key === 'up') {
+      if (this.locY === -50) {
+        this.locY = -50;
+        return this.locY;
+      }
       this.locY = this.locY -90;
       console.log(this.locY ); // For testing readout
       return this.locY;
