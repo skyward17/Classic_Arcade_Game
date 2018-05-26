@@ -46,20 +46,18 @@ let Player = function(locX, locY) {
     // we've provided one for you to get started
     // The image/sprite for player
     this.charboy = 'images/char-boy.png';
+    this.charCatGirl = 'images/char-cat-girl.png';
+    this.charHornGirl = 'images/char-horn-girl.png';
+    this.charPinkGirl = 'images/char-pink-girl.png';
+    this.charPrincessGirl = 'images/char-princess-girl.png';
+    this.charSEAL = 'images/char-seal-boy.png';
+
 
     // Start location for player
     this.locX = locX;
     this.locY = locY;
 
 
-/*
-    this.charboy = 'images/char-boy.png';
-    this.charCatGirl = 'images/char-cat-girl.png';
-    this.charHornGirl = 'images/char-horn-girl.png';
-    this.charPinkGirl = 'images/char-pink-girl.png';
-    this.charPrincessGirl = 'images/char-princess-girl.png';
-    this.charSEAL = 'images/char-seal-boy.png';
-*/
 };
 
 Player.prototype.update = function(dt) {
