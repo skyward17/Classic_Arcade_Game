@@ -72,38 +72,43 @@ Player.prototype.update = function(dt) {
 Player.prototype.handleInput = function(key) {
 
 // Handles LEFT KEY  noteToSelf: movement by square, handle off screen
-  if (key === 'left') {
+    if (key === 'left') {
     // Left Screen Block.  If 0 x then remain there, cannot go further left.
-      if (this.locX === 0) {
-        this.locX = 0;
+        if (this.locX === 0) {
+          this.locX = 0;
+          return this.locX;
+        }
+        this.locX = this.locX -100;  // Set to 100's to move block by block
+        console.log(this.locX);  // For testing readout
         return this.locX;
-      }
-      this.locX = this.locX -100;  // Set to 100's to move block by block
-      console.log(this.locX);  // For testing readout
-      return this.locX;
-  }
-  if (key === 'right') {
-    // Left Screen Block.  If 0 x then remain there, cannot go further left.
-      if (this.locX === 400) {
-        this.locX = 400;
-        return this.locX;
-      }
-      this.locX = this.locX +100;
-      console.log(this.locX);  // For testing readout
-      return this.locX;
-  }
-  if (key === 'up') {
-    this.locY = this.locY -100;
-    console.log(this.locY ); // For testing readout
-    return this.locY;
-  }
-  if (key === 'down') {
-    this.locY = this.locY +100;
-    console.log(this.locY); // For testing readout
-    return this.locY;
-  }
+    }
 
-};
+    if (key === 'right') {
+    // Left Screen Block.  If 0 x then remain there, cannot go further left.
+        if (this.locX === 400) {
+          this.locX = 400;
+          return this.locX;
+        }
+        this.locX = this.locX +100;
+        console.log(this.locX);  // For testing readout
+        return this.locX;
+    }
+
+    if (key === 'up') {
+      this.locY = this.locY -90;
+      console.log(this.locY ); // For testing readout
+      return this.locY;
+    }
+
+    if (key === 'down') {
+      if (this.locY === 400) {
+        this.locY = 400;
+        return this.locY;
+      }
+      this.locY = this.locY +90;
+      console.log(this.locY ); // For testing readout
+    }
+};  // END Player handleInput
 
 // Draw the enemy on the screen, required method for game
 Player.prototype.render = function(locX, locY) {
