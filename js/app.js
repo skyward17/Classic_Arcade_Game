@@ -21,8 +21,11 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-  this.locX += this.enemySpeed * dt;
-  console.log(this.locX); // For testing readout
+    if (this.locX === 500) {  // Check if sprite clears screen and restarts
+
+    }
+    this.locX += this.enemySpeed * dt;
+    console.log(this.locX); // For testing readout
 };
 
 // Draw the enemy on the screen, required method for game
@@ -31,9 +34,10 @@ Enemy.prototype.render = function(locX, locY) {
 };
 
 // Enemy objects in an array called allEnemies
-let enemyOne = new Enemy(0,40, 10);  // Not sure placement
+let enemyOne = new Enemy(0, 40, 10); // Top most sprite
+let enemyTwo = new Enemy(0, 120, 20)
 allEnemies = [];
-allEnemies.push(enemyOne);
+allEnemies.push(enemyOne, enemyTwo);
 
 
 
