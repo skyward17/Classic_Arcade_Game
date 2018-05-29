@@ -21,8 +21,8 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-    if (this.locX === 500) {  // Check if sprite clears screen and restarts
-
+    if (this.locX >= 500) {  // Check if sprite clears screen and restarts
+        this.locX = 0;  // Staring point on X axis
     }
     this.locX += this.enemySpeed * dt;
     console.log(this.locX); // For testing readout
