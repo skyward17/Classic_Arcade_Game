@@ -21,7 +21,7 @@ Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-  this.locX + this.enemySpeed * dt;
+  this.locX += this.enemySpeed * dt;
   console.log(this.locX); // For testing readout
 };
 
@@ -31,7 +31,7 @@ Enemy.prototype.render = function(locX, locY) {
 };
 
 // Enemy objects in an array called allEnemies
-let enemyOne = new Enemy(-50,0, 10);  // Not sure placement
+let enemyOne = new Enemy(0,40, 10);  // Not sure placement
 allEnemies = [];
 allEnemies.push(enemyOne);
 
