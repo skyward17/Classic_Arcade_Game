@@ -11,18 +11,18 @@ let Enemy = function(locX, locY, enemySpeed) {
     this.locY = locY;
 
     //Speed of Enemies based on user difficulty selection
-    this.enemySpeed = 100;  //enemySpeed for Speed of Enemies based on user difficulty selection added later
+    this.enemySpeed = enemySpeed;  //enemySpeed for Speed of Enemies based on user difficulty selection added later
 
 };
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
-Enemy.prototype.update = function(locX, dt) {
+Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
     // all computers.
-  this.locX = locX + this.enemySpeed * dt;
-
+  this.locX + this.enemySpeed * dt;
+  console.log(this.locX); // For testing readout
 };
 
 // Draw the enemy on the screen, required method for game
@@ -31,20 +31,23 @@ Enemy.prototype.render = function(locX, locY) {
 };
 
 // Enemy objects in an array called allEnemies
-let enemyOne = new Enemy(100,100);  // Not sure placement
-let allEnemies = [enemyOne];
+let enemyOne = new Enemy(-50,0, 10);  // Not sure placement
+allEnemies = [];
+allEnemies.push(enemyOne);
 
-//let update = new.Enemy() {};
+
 
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
 
-
-let Player = function(locX, locY) {
+let Player = function(locX, locY, gamerSelect) {
     // Variables applied to each of our instances go here,
     // we've provided one for you to get started
     // The image/sprite for player
+
+    this.gamerSelect = gamerSelect;  // For future enhancement
+    //if (gamerSelect === charboy) {}
     this.charboy = 'images/char-boy.png';
     this.charCatGirl = 'images/char-cat-girl.png';
     this.charHornGirl = 'images/char-horn-girl.png';
@@ -114,11 +117,10 @@ Player.prototype.handleInput = function(key) {
 
 // Draw the enemy on the screen, required method for game
 Player.prototype.render = function(locX, locY) {
-    ctx.drawImage(Resources.get(this.charboy), this.locX, this.locY);
+    ctx.drawImage(Resources.get(this.charSEAL), this.locX, this.locY);
 };
 
 // Now instantiate your objects.
-
 let playerOne = new Player(200,400);
 
 // Player object in a variable called player
