@@ -25,7 +25,7 @@ Enemy.prototype.update = function(dt) {
         this.locX = 0;  // Staring point on X axis
     }
     this.locX += this.enemySpeed * dt;
-    checkCollisions();
+    checkCollisions(this);
 };
 
 // Draw the enemy on the screen, required method for game
@@ -41,11 +41,16 @@ allEnemies.push(enemyOne, enemyTwo);
 
 
 // Checks if the player and the spirts have the same locX and locY
-function checkCollisions () {
-    if (Enemy.locX === Player.locX && Enemy.locY === Player.locY) {
+function checkCollisions (enemyLoc) {
+    enemyLoc.locX;
+    enemyLoc.locY;
+    Player.locX;
+    if (enemyLoc.locX === Player.locX && enemyLoc.locY === Player.locY) {
         console.log("GAME OVER");
+        //console.log(enemyLoc.locX, enemyLocY);
          //gameOver();
     }
+    console.log(Player.locX + "Player X");
 };
 
 
