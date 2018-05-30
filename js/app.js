@@ -26,7 +26,6 @@ Enemy.prototype.update = function(dt) {
     }
     this.locX += this.enemySpeed * dt;
     checkCollisions();
-    console.log(this.locX); // For testing readout
 };
 
 // Draw the enemy on the screen, required method for game
@@ -43,11 +42,13 @@ allEnemies.push(enemyOne, enemyTwo);
 
 // Checks if the player and the spirts have the same locX and locY
 function checkCollisions () {
-    if (Enemy.locX === Player.locX || Enemy.locY === Player.locY) {
+    if (Enemy.locX === Player.locX && Enemy.locY === Player.locY) {
         console.log("GAME OVER");
          //gameOver();
-      }
+    }
 };
+
+
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
