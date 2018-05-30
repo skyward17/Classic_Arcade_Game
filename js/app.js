@@ -25,6 +25,7 @@ Enemy.prototype.update = function(dt) {
         this.locX = 0;  // Staring point on X axis
     }
     this.locX += this.enemySpeed * dt;
+    checkCollisions();
     console.log(this.locX); // For testing readout
 };
 
@@ -34,13 +35,19 @@ Enemy.prototype.render = function(locX, locY) {
 };
 
 // Enemy objects in an array called allEnemies
-let enemyOne = new Enemy(0, 40, 10); // Top most sprite
-let enemyTwo = new Enemy(0, 120, 20)
+let enemyOne = new Enemy(0, 40, 20); // Top most sprite
+let enemyTwo = new Enemy(0, 120, 40);
 allEnemies = [];
 allEnemies.push(enemyOne, enemyTwo);
 
 
-
+// Checks if the player and the spirts have the same locX and locY
+function checkCollisions () {
+    if (Enemy.locX === Player.locX || Enemy.locY === Player.locY) {
+        console.log("GAME OVER");
+         //gameOver();
+      }
+};
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
