@@ -10,6 +10,10 @@ let Enemy = function(locX, locY, enemySpeed) {
     this.locX = locX;
     this.locY = locY;
 
+    // Sprite Dimsnsions
+    this.width = 60;
+    this.height = 40;
+    console.log(this.width, this.height);
     //Speed of Enemies based on user difficulty selection
     this.enemySpeed = enemySpeed;  //enemySpeed for Speed of Enemies based on user difficulty selection added later
 
@@ -42,15 +46,18 @@ allEnemies.push(enemyOne, enemyTwo);
 
 // Checks if the player and the spirts have the same locX and locY
 function checkCollisions (enemyLoc) {
-    enemyLoc.locX;
-    enemyLoc.locY;
-    Player.locX;
-    if (enemyLoc.locX === Player.locX && enemyLoc.locY === Player.locY) {
+
+
+    if (enemyLoc.locX < playerOne.locX && enemyLoc.locX + enemyLoc.width > playerOne.locX &&
+    enemyLoc.locY < playerOne.locY && enemyLoc.height + enemyLoc.locY > playerOne.locY) {
+        console.log("GAME OVER");
+    }
+    if (enemyLoc.locX === playerOne.locX && enemyLoc.locY === playerOne.locY) {
         console.log("GAME OVER");
         //console.log(enemyLoc.locX, enemyLocY);
          //gameOver();
     }
-    console.log(Player.locX + "Player X");
+    //console.log(Player.locX + "Player X");
 };
 
 
@@ -97,7 +104,7 @@ Player.prototype.handleInput = function(key) {
           return this.locX;
         }
         this.locX = this.locX -100;  // Set to 100's to move block by block
-        console.log(this.locX);  // For testing readout
+        //console.log(this.locX);  // For testing readout
         return this.locX;
     }
 
