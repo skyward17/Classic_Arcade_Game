@@ -11,9 +11,12 @@ let Enemy = function(locX, locY, enemySpeed) {
     this.locY = locY;
 
     // Sprite Dimsnsions
-    this.width = 60;
-    this.height = 40;
-    console.log(this.width, this.height);
+    this.widthPos = 100;
+    this.widthNeg = -100;
+    this.width = 100;
+    this.height = 60;
+    console.log(this.widthPos, this.widthNeg,this.width, this.height);
+
     //Speed of Enemies based on user difficulty selection
     this.enemySpeed = enemySpeed;  //enemySpeed for Speed of Enemies based on user difficulty selection added later
 
@@ -47,17 +50,11 @@ allEnemies.push(enemyOne, enemyTwo);
 // Checks if the player and the spirts have the same locX and locY
 function checkCollisions (enemyLoc) {
 
-
-    if (enemyLoc.locX < playerOne.locX && enemyLoc.locX + enemyLoc.width > playerOne.locX &&
+    if (enemyLoc.locX < playerOne.locX && enemyLoc.locX + enemyLoc.widthPos > playerOne.locX && enemyLoc.locX + enemyLoc.widthNeg < playerOne.locX &&
     enemyLoc.locY < playerOne.locY && enemyLoc.height + enemyLoc.locY > playerOne.locY) {
         console.log("GAME OVER");
+        //gameOver();
     }
-    if (enemyLoc.locX === playerOne.locX && enemyLoc.locY === playerOne.locY) {
-        console.log("GAME OVER");
-        //console.log(enemyLoc.locX, enemyLocY);
-         //gameOver();
-    }
-    //console.log(Player.locX + "Player X");
 };
 
 
