@@ -10,12 +10,17 @@ let Enemy = function(locX, locY, enemySpeed) {
     this.locX = locX;
     this.locY = locY;
 
+/// +=
     // Sprite Dimsnsions
-    this.widthPos = 100;
-    this.widthNeg = -100;
-    this.width = 100;
-    this.height = 60;
-    console.log(this.widthPos, this.widthNeg,this.width, this.height);
+    this.widthPos = this.locY += 100;
+    this.widthNeg = this.locY -= 100;
+    this.heightUp = this.locX += 100;
+    this.heightDown = this.locX -=100;
+    //this.widthPos = 100;
+    //this.widthNeg = -100;
+    //this.width = 100;
+    //this.height = 60;
+    console.log(this.widthPos, this.widthNeg,this.heightUp, this.heightDown);
 
     //Speed of Enemies based on user difficulty selection
     this.enemySpeed = enemySpeed;  //enemySpeed for Speed of Enemies based on user difficulty selection added later
@@ -49,12 +54,26 @@ allEnemies.push(enemyOne, enemyTwo);
 
 // Checks if the player and the spirts have the same locX and locY
 function checkCollisions (enemyLoc) {
-
+  enemyOne.widthPos;
+  //let enemyLocWidthPos = Enemy.widthPos;
+    //console.log(enemyOne.widthPos, enemyOne.widthNeg, enemyOne.heightUp, enemyOne.heightDown);
+    if (playerOne.locX < enemyLoc.widthPos && playerOne.locX > enemyLoc.widthNeg && playerOne.locY < enemyLoc.heightUp && playerOne.locY > enemyLoc.heightDown) {
+      console.log("GAME OVER");
+      //gameOver(lose);
+    }
+/*
     if (enemyLoc.locX < playerOne.locX && enemyLoc.locX + enemyLoc.widthPos > playerOne.locX && enemyLoc.locX + enemyLoc.widthNeg < playerOne.locX &&
     enemyLoc.locY < playerOne.locY && enemyLoc.height + enemyLoc.locY > playerOne.locY) {
         console.log("GAME OVER");
         //gameOver();
     }
+/*
+    if (enemyLoc.locX < playerOne.locX && enemyLoc.locX + enemyLoc.widthPos > playerOne.locX && enemyLoc.locX + enemyLoc.widthNeg < playerOne.locX &&
+    enemyLoc.locY < playerOne.locY && enemyLoc.height + enemyLoc.locY > playerOne.locY) {
+        console.log("GAME OVER");
+        //gameOver();
+    }
+*/
 };
 
 
@@ -118,7 +137,9 @@ Player.prototype.handleInput = function(key) {
 
     if (key === 'up') {
       if (this.locY === -50) {
-        this.locY = -50;
+        console.log("winner");
+        //gameOver(win);
+        this.locY =-50;
         return this.locY;
       }
       this.locY = this.locY -90;
